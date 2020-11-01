@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block col-1 %}
+<div class="col d-flex justify-content-about">
+    {% for crop in crop_list %}
+    <div class="card mb-4 d-flex justify-content-center" id="card">
+        <h2 class="card-title font-weight-bold">{{crop.Crop}}</h2>
+        <a href="{{crop.fertilizer_url}}" class="d-flex justify-content-start">
+            <h5>Fertilizers<i class="fas fa-angle-double-right"></i></h5>
+        </a>
+        <a href="{{crop.pesticide_url}}" class="d-flex justify-content-start">
+            <h5>Pesticides<i class="fas fa-angle-double-right"></i></h5>
+        </a>
+        <a href="{{crop.seeds_url}}" class="d-flex justify-content-justify-start">
+            <h5>Seeds<i class="fas fa-angle-double-right"></i></h5>
+        </a>
+        <a href="{{crop.method_url}}" class="d-flex justify-content-justify-start">
+            <h5>Best Practices<i class="fas fa-angle-double-right"></i></h5>
+        </a>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

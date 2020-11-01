@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} {% block col-1 %}
+<div class="col-md d-flex">
+    <div class="d-flex justify-content-center text-white">
+        <div class="w-50">
+            <div class="md-form">
+                <form action="{% url 'dashboard:output' %}" method="POST">
+                    {% csrf_token %} {{form.as_p}}
+                    <div class="text-center">
+                        <button type="submit" class="btn z-depth-1-half" id="btn">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %} {% block col-2 %}
+<div class="col-md d-flex justify-content-center">
+    <div id='map' class="z-depth-1-half" style='width: 600px; height: 500px;'></div>
+    <script>
+        mapboxgl.accessToken = '{{map_access_token}}';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [78.96, 20.59],
+            zoom: 3,
+        });
+    </script>
+</div>
+
+
+{% endblock %}

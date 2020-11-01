@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block col-1 %}
+<div class="col-md align-middle overflow-hidden">
+    <div id="intro">
+        <div class="d-flex justify-content-center">
+            <div class="w-50">
+                <p>A web based application that helps farmers to chose their crops with the aid of machine learning through an app that takes in various parameters like location, availability of resources, etc to suggest the farmers crop that might result
+                    in better yeilds.</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-50">
+        <a href="{% url 'dashboard:input' %}" type="button" class="btn z-depth-1-half" id="btn">Try!</a>
+    </div>
+</div>
+{% endblock %} {% block col-2 %}
+<div class="col-md d-flex justify-content-center">
+    <img src="{% static 'dashboard/img/ldpg.svg' %}" alt="farm" id="ldpg-svg">
+</div>
+
+{% endblock %}
